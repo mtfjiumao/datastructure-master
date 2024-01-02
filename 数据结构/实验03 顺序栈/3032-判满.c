@@ -23,5 +23,5 @@ int main()
 /*你的提交的代码将被添加在此处，请完成题目所要求的函数的定义*/
 
 int full(SeqStack *S) {
-    return S->top + 1 == S->capacity;
+    return (S->top + 1) == S->capacity;
 }
