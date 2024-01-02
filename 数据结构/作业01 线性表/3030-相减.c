@@ -42,7 +42,7 @@ void polySub(PolyList LA, PolyList LB,PolyList LC) {
             insertTail(LC, nodeA->coef, nodeA->exp);
             nodeA = nodeA->next;
         } else if (nodeA->exp < nodeB->exp) {
-            insertTail(LC, nodeB->coef, nodeB->exp);
+            insertTail(LC, -nodeB->coef, nodeB->exp);
             nodeB = nodeB->next;
         } else {
             if (nodeA->coef- nodeB->coef) {
@@ -57,7 +57,7 @@ void polySub(PolyList LA, PolyList LB,PolyList LC) {
         nodeA = nodeA->next;
     }
     while (nodeB) {
-        insertTail(LC, nodeB->coef, nodeB->exp);
+        insertTail(LC, -nodeB->coef, nodeB->exp);
         nodeB = nodeB->next;
     }
 }
