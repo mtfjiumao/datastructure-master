@@ -50,7 +50,7 @@ int evaluation(SeqStack *S, char str[]) {
             if (str[i] == '*') num = num2 * num1;
             if (str[i] == '/') num = num2 / num1;
             push(S, num);
-        } else if ('0' < str[i] && str[i] <'9') {
+        } else if ('0' <= str[i] && str[i] <= '9') {
             push(S, str[i] - '0');
         }
     }
