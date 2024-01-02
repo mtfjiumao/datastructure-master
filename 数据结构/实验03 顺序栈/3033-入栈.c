@@ -23,5 +23,10 @@ int main()
 /*你的提交的代码将被添加在此处，请完成题目所要求的函数的定义*/
 
 int push(SeqStack *S, ElementType x) {
-
+    if (S->top + 1 < S->capacity) {
+        S->top++;
+        S->array[S->top] = x;
+        return 1;
+    }
+    return 0;
 }
