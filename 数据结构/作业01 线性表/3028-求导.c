@@ -24,19 +24,21 @@ int main()
 /*你的提交的代码将被添加在此处，请完成题目所要求的函数的定义*/
 
 void derivative(PolyList L) {
-    PolyNode* node = L;
+    PolyNode *node = L;
+    PolyNode *p = NULL;
     PolyNode *n = NULL;
-    while (node) {
+    while (node->next) {
+        p = node;
+        node = node->next;
         if (node->exp == 0) {
             n = node;
             break;
         }
         node->coef = node->coef * node->exp;
         node->exp = node->exp - 1;
-        node = node->next;
     }
-    if (n && node != NULL) {
-        node->next = NULL;
+    if (n) {
+        p->next = NULL;
         free(n);
     }
 }
